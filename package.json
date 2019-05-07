@@ -1,0 +1,32 @@
+{
+  "name": "writersblock",
+  "version": "1.0.0",
+  "description": "platform for writers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gradyzhu/writersblock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gradyzhu/writersblock/issues"
+  },
+  "homepage": "https://github.com/gradyzhu/writersblock#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
