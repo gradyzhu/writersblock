@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const mongoose = require('mongoose');
-
-app.get("/", (req, res) => res.send("hello world"));
-
+const bodyParser = require('body-parser');
+const users = require("./routes/api/users");
+const posts = require("./routes/api/posts");
 const db = require('./config/keys').mongoURI;
 
 mongoose
@@ -12,6 +12,12 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
-
-
+  
+  app.get("/", (req, res) => res.send("hello world"));
+  app.use("/api/users", users);
+  app.use("/api/posts", posts);
+  
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+  
+  app.listen(port, () => console.log(`Server is running on port ${port}`));
